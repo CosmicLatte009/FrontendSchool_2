@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+      /* setting */
+      :root {
+        --pri: #f9f9f9;
+        --sec: #ffacb7;
+        --thr: #4f0e0e;
+      }
+      /* reset */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      /* layout */
+      *,
+      *:after,
+      *:before {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #54bab9;
+      }
+
+      .dog {
+        position: relative;
+        top: 100px;
+        margin: 50px auto;
+        width: 400px;
+        height: 380px;
+      }
+
+      .dog .ear_left {
+        position: absolute;
+        top: 60px;
+        left: -30px;
+        width: 120px;
+        height: 110px;
+        border-radius: 10% 90% 50% 50% / 10% 55% 45% 90%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background: var(--pri);
+      }
+
+      .dog .ear_right {
+        position: absolute;
+        top: 60px;
+        right: 60px;
+        width: 120px;
+        height: 110px;
+        border-radius: 10% 90% 50% 50% / 10% 55% 45% 90%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background: var(--pri);
+        transform: rotate(90deg);
+      }
+
+      .dog .earpiece_left_1 {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 48px;
+        height: 40px;
+        border-radius: 10% 90% 50% 50% / 10% 55% 45% 90%;
+        background: var(--sec);
+        transform: rotate(-10deg);
+      }
+
+      .dog .earpiece_left_2 {
+        position: absolute;
+        top: 50px;
+        left: 36px;
+        width: 40px;
+        height: 35px;
+        border-radius: 10% 90% 50% 50% / 10% 55% 45% 90%;
+        background: var(--sec);
+        transform: rotate(-45deg);
+      }
+
+      .dog .earpiece_right_1 {
+        position: absolute;
+        top: 45px;
+        right: 30px;
+        width: 48px;
+        height: 40px;
+        border-radius: 10% 90% 50% 50% / 10% 55% 45% 90%;
+        background: var(--sec);
+        transform: rotate(12deg);
+      }
+
+      .dog .earpiece_right_2 {
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        width: 40px;
+        height: 35px;
+        border-radius: 10% 90% 50% 50% / 10% 55% 45% 90%;
+        background: var(--sec);
+        transform: rotate(40deg);
+      }
+
+      .dog .face {
+        position: absolute;
+        bottom: 0;
+        width: 300px;
+        height: 280px;
+        border-radius: 45%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background: var(--pri);
+      }
+
+      .dog .eyebrow_left {
+        position: absolute;
+        top: 70px;
+        left: 70px;
+        width: 35px;
+        height: 12px;
+        border-radius: 50px;
+        background: #724747;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transform: rotate(-15deg);
+        z-index: 3;
+      }
+
+      .dog .eyebrow_right {
+        position: absolute;
+        top: 70px;
+        right: 70px;
+        width: 35px;
+        height: 12px;
+        border-radius: 50px;
+        background: #724747;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transform: rotate(15deg);
+        z-index: 3;
+      }
+
+      .dog .eye_left {
+        position: absolute;
+        top: 110px;
+        left: 80px;
+        width: 30px;
+        height: 35px;
+        border-radius: 50px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background: var(--thr);
+        z-index: 3;
+      }
+
+      .dog .eye_right {
+        position: absolute;
+        top: 110px;
+        right: 80px;
+        width: 30px;
+        height: 35px;
+        border-radius: 50px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background: var(--thr);
+        z-index: 3;
+      }
+
+      .dog .eyepiece_left {
+        position: absolute;
+        top: 3px;
+        left: 15px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50px;
+        background: #fff1f1;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      .dog .eyepiece_right {
+        position: absolute;
+        top: 3px;
+        left: 15px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50px;
+        background: #fff1f1;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      .dog .nose {
+        position: absolute;
+        top: 150px;
+        left: 135px;
+        width: 35px;
+        height: 25px;
+        border-radius: 10px 10px 30px 30px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background: var(--thr);
+        z-index: 3;
+      }
+
+      .dog .nose_piece {
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        width: 18px;
+        height: 12px;
+        border-radius: 40px 40px 100px 100px;
+        background: #724747;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        z-index: 3;
+      }
+
+      .dog .mouth_left {
+        position: absolute;
+        top: 170px;
+        left: 142px;
+        width: 6px;
+        height: 25px;
+        background: var(--thr);
+        border-radius: 50%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transform: rotate(45deg);
+      }
+
+      .dog .mouth_right {
+        position: absolute;
+        top: 170px;
+        right: 140px;
+        width: 6px;
+        height: 25px;
+        background: var(--thr);
+        border-radius: 50%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transform: rotate(-45deg);
+      }
+
+      .dog .blush_left_1 {
+        position: absolute;
+        top: 150px;
+        left: 60px;
+        width: 3px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--sec);
+        transform: rotate(45deg);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      .dog .blush_left_2 {
+        position: absolute;
+        top: 150px;
+        left: 70px;
+        width: 3px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--sec);
+        transform: rotate(45deg);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      .dog .blush_right_1 {
+        position: absolute;
+        top: 150px;
+        right: 60px;
+        width: 3px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--sec);
+        transform: rotate(-45deg);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      .dog .blush_right_2 {
+        position: absolute;
+        top: 150px;
+        right: 70px;
+        width: 3px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--sec);
+        transform: rotate(-45deg);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      .dog .hand_left {
+        position: absolute;
+        top: 280px;
+        width: 95px;
+        height: 150px;
+        border-radius: 45%;
+        background: var(--pri);
+        transform: rotate(45deg);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        z-index: 5;
+        /*border: 1px solid #4f0e0e;*/
+      }
+
+      .dog .hand_right {
+        position: absolute;
+        top: 280px;
+        right: 100px;
+        width: 95px;
+        height: 150px;
+        border-radius: 45%;
+        background: var(--pri);
+        transform: rotate(-45deg);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        z-index: 5;
+      }
+
+      .dog .line_left_1 {
+        position: absolute;
+        left: 35px;
+        width: 6px;
+        height: 25px;
+        border-radius: 50px;
+        background: #724747;
+        opacity: 0.5;
+      }
+
+      .dog .line_left_2 {
+        position: absolute;
+        left: 50px;
+        width: 6px;
+        height: 25px;
+        border-radius: 50px;
+        background: #724747;
+        opacity: 0.5;
+      }
+
+      .dog .line_right_1 {
+        position: absolute;
+        right: 35px;
+        width: 6px;
+        height: 25px;
+        border-radius: 50px;
+        background: #724747;
+        opacity: 0.5;
+      }
+
+      .dog .line_right_2 {
+        position: absolute;
+        right: 50px;
+        width: 6px;
+        height: 25px;
+        border-radius: 50px;
+        background: #724747;
+        opacity: 0.5;
+      }
+
+      .paper {
+        position: relative;
+        top: 320px;
+        left: 55px;
+        width: 200px;
+        height: 130px;
+        background: #ffe5b9;
+        z-index: 3;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      .paper .paper_line_left {
+        position: absolute;
+        top: 10px;
+        left: 66px;
+        width: 4px;
+        height: 90px;
+        background: #ffab76;
+        border-radius: 50%;
+        transform: rotate(-45deg);
+        z-index: 5;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      .paper .paper_line_right {
+        position: absolute;
+        top: 10px;
+        right: 66px;
+        width: 4px;
+        height: 90px;
+        background: #ffab76;
+        border-radius: 50%;
+        transform: rotate(45deg);
+        z-index: 5;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+
+      .paper .heart_sticker {
+        position: absolute;
+        top: 55px;
+        left: 48px;
+      }
+      .paper .heart {
+        position: relative;
+        width: 100px;
+        height: 90px;
+        z-index: 5;
+      }
+
+      .heart:before,
+      .heart:after {
+        position: absolute;
+        content: "";
+        left: 50px;
+        top: 0;
+        width: 30px;
+        height: 50px;
+        background: #ff6363;
+        border-radius: 50px 50px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+      .heart:after {
+        left: 20px;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+
+      .paper p {
+        position: absolute;
+        color: rgb(141, 34, 1);
+        top: 120px;
+        left: 18px;
+        font-family: "Nanum Pen Script", cursive;
+        font-size: x-large;
+        z-index: 5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dog">
+      <div class="ear_left">
+        <div class="earpiece_left_1"></div>
+        <div class="earpiece_left_2"></div>
+      </div>
+      <div class="ear_right">
+        <div class="earpiece_right_1"></div>
+        <div class="earpiece_right_2"></div>
+      </div>
+
+      <div class="face">
+        <div class="blush_left_1"></div>
+        <div class="blush_left_2"></div>
+        <div class="blush_right_1"></div>
+        <div class="blush_right_2"></div>
+        <div class="eyebrow_left"></div>
+        <div class="eyebrow_right"></div>
+        <div class="eye_left">
+          <div class="eyepiece_left"></div>
+        </div>
+        <div class="eye_right">
+          <div class="eyepiece_right"></div>
+        </div>
+
+        <div class="nose">
+          <div class="nose_piece"></div>
+        </div>
+
+        <div class="mouth_left"></div>
+        <div class="mouth_right"></div>
+      </div>
+      <div class="hand_left">
+        <div class="line_left_1"></div>
+        <div class="line_left_2"></div>
+      </div>
+      <div class="hand_right">
+        <div class="line_right_1"></div>
+        <div class="line_right_2"></div>
+      </div>
+
+      <div class="paper">
+        <div class="paper_line_left"></div>
+        <div class="paper_line_right"></div>
+        <div class="heart_sticker">
+          <div div class="heart"></div>
+        </div>
+        <p>다들 고생 많으셨습니다!</p>
+      </div>
+    </div>
+  </body>
+</html>
